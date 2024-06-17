@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.3
+bs4==0.0.2
+certifi==2024.6.2
+charset-normalizer==3.3.2
+idna==3.7
+requests==2.32.3
+soupsieve==2.5
+-e git+ssh://git@github.com/bradley-erickson/th-helpers.git@412a6127326ffbe8024ae22262cdca3b005fb4ce#egg=th_helpers
+urllib3==2.2.2
