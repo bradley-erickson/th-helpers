@@ -69,4 +69,3 @@ if __name__ == '__main__':
     print(out)
     decks = fetch_decklists(out)
     print(decks[0])
-
