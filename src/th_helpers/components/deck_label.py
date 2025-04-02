@@ -39,3 +39,8 @@ def get_pokemon_icon(pokemon):
         mon = pokemon_mapping[pokemon] if pokemon in pokemon_mapping else pokemon
         source = f'{pokemon_url}/{mon}.png'
     return source
+
+
+def create_default_deck(id):
+    id_fix = 'other' if id is None else id
+    return {'id': id_fix, 'name': id_fix.title(), 'icons': ['substitute']}
