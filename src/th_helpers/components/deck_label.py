@@ -8,6 +8,8 @@ pokemon_mapping = {
     'squawkabilly': 'squawkabilly-green',
     'regieleki-a': 'regieleki',
     'ogerpon-cornerstone': 'ogerpon-cornerstone-mask',
+    'ogerpon-wellspring': 'ogerpon-wellspring-mask',
+    'ogerpon-hearthflame': 'ogerpon-hearthflame-mask',
     'terapagos': 'terapagos-terastal'
 }
 
