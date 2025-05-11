@@ -5,7 +5,6 @@ import math
 from th_helpers.components import deck_label
 from th_helpers.utils import colors
 
-
 win_rate_calc_comp = dcc.Markdown(
     '''
     $$
@@ -22,6 +21,28 @@ SIGNIFICANT_MAPPING = {
 }
 
 
+def determine_win_rate(match):
+    if 'Win' in match:
+        wins = match.get('Win', 0)
+        loss = match.get('Loss', 0)
+        ties = match.get('Tie', 0)
+    elif 'wins' in match:
+        wins = match.get('wins', 0)
+        loss = match.get('losses', 0)
+        ties = match.get('ties', 0)
+    elif 'w' in match:
+        wins = match.get('w', 0)
+        loss = match.get('l', 0)
+        ties = match.get('t', 0)
+    else:
+        wins = 0
+        loss = 0
+        ties = 0
+    total = wins + loss + ties
+    if total == 0: return 0
+    return round((wins + ties/3) / total * 100, 1)
+
+
 def create_record_string(match):
     if 'Win' in match and 'Loss' in match:
         tied = f'-{match["Tie"]}' if 'Tie' in match else ''
@@ -33,7 +54,7 @@ def create_record_string(match):
         return record_string
     if 'w' in match or 'l' in match:
         tied = f'-{match["t"]}' if 't' in match else ''
-        record_string = f'{match["w"]}-{match["l"]}{tied}'
+        record_string = f'{match.get("w", 0)}-{match.get("l", 0)}{tied}'
         return record_string
     return None
 
@@ -53,6 +74,15 @@ def create_popover_inside(color='', record='', wr='', decks=None, match=None, pl
         html.Div(f'{wr}%'),
         html.Div(record)
     ], className='text-black text-center p-2 rounded', style={'backgroundColor': color})
+
+
+def create_record_display(match, className=None):
+    wr = match['win_rate']
+    record = create_record_string(match)
+    color = colors.win_rate_color_bar[math.floor(wr)][1]
+    return html.Td([
+        f'{wr}%', html.Div(record)
+    ], className=f'text-center text-black {className}', style={'backgroundColor': color})
 
 
 def create_matchup_tile(match, decks, player, against):
