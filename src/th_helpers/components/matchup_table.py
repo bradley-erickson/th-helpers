@@ -1,6 +1,8 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
+import inspect
 import math
+from typing import Callable
 
 from th_helpers.components import deck_label
 from th_helpers.utils import colors
@@ -52,22 +54,32 @@ def create_record_string(match):
         tied = f'-{match["ties"]}' if 'ties' in match else ''
         record_string = f'{match["wins"]}-{match["losses"]}{tied}'
         return record_string
-    if 'w' in match or 'l' in match:
+    if 'w' in match or 'l' in match or 't' in match:
         tied = f'-{match["t"]}' if 't' in match else ''
         record_string = f'{match.get("w", 0)}-{match.get("l", 0)}{tied}'
         return record_string
     return None
 
 
-def create_popover_inside(color='', record='', wr='', decks=None, match=None, player=None, against=None):
+def _call_label_func(func, deck, hide_text=False):
+    if func is None:
+        return None
+    kwargs = {}
+    kwargs['hide_text'] = hide_text
+    if isinstance(func, Callable):
+        return func(deck, **kwargs)
+    return None
+
+
+def create_popover_inside(color='', record='', wr='', decks=None, match=None, player=None, against=None, label_func=None):
     vs_item = html.Div([
-        html.Span(deck_label.format_label(
-            decks.get(match[player], deck_label.create_default_deck(match[player])),
-            hide_text=True)),
+        html.Span(
+            _call_label_func(label_func, decks.get(match[player]), hide_text=True)
+        ),
         html.Span('vs.', className='mx-2'),
-        html.Span(deck_label.format_label(
-            decks.get(match[against], deck_label.create_default_deck(match[against])),
-            hide_text=True)),
+        html.Span(
+            _call_label_func(label_func, decks.get(match[against]), hide_text=True)
+        ),
     ], className='d-flex align-items-center justify-content-around')
     return html.Div([
         vs_item,
@@ -85,7 +97,7 @@ def create_record_display(match, className=None):
     ], className=f'text-center text-black {className}', style={'backgroundColor': color})
 
 
-def create_matchup_tile(match, decks, player, against):
+def create_matchup_tile(match, decks, player, against, label_func=None):
     if match is None or match['win_rate'] is None or math.isnan(match['win_rate']):
         return html.Td('-', className='text-center align-middle')
     id = match[player] + match[against]
@@ -97,19 +109,22 @@ def create_matchup_tile(match, decks, player, against):
         dbc.Popover(
             create_popover_inside(color=color, record=record, wr=wr,
                                   decks=decks, match=match, player=player,
-                                  against=against),
+                                  against=against, label_func=label_func),
             target=id,
             trigger='hover',
             placement='bottom'
         ),
     ], style={'backgroundColor': color, 'width': '112px'}, className='text-center text-black align-middle')
 
-def create_matchup_table_row(deck, data, decks, player, against):
-    matches = [create_matchup_tile(match, decks, player, against) for match in data]
-    row = html.Tr([html.Td(deck_label.format_label(decks[deck]), className='text-nowrap align-middle')] + matches)
+def create_matchup_table_row(deck, data, decks, player, against, label_func=None):
+    matches = [create_matchup_tile(match, decks, player, against, label_func=label_func) for match in data]
+    row = html.Tr([html.Td(
+        _call_label_func(label_func, decks[deck]),
+        className='text-nowrap align-middle'
+    )] + matches)
     return row
 
-def create_matchup_tile_full(match, decks, player, against):
+def create_matchup_tile_full(match, decks, player, against, label_func=None):
     if match is None or match['win_rate'] is None or math.isnan(match['win_rate']):
         return html.Span(className='d-none')
     id = match[player] + match[against]
@@ -118,9 +133,9 @@ def create_matchup_tile_full(match, decks, player, against):
     color = colors.win_rate_color_bar[math.floor(wr)][1]
     vs_item = html.Div([
         html.Span('vs.', className='me-1'),
-        html.Span(deck_label.format_label(
-            decks.get(match[against], deck_label.create_default_deck(match[against])),
-            hide_text=True)),
+        html.Span(
+            _call_label_func(label_func, decks.get(match[against]), hide_text=True)
+        ),
     ], className='d-flex align-items-center')
     significant = SIGNIFICANT_MAPPING[match['significant']] if match.get('significant', None) else ''
     return dbc.Card(
@@ -134,14 +149,14 @@ def create_matchup_tile_full(match, decks, player, against):
         id=id
     )    
 
-def create_matchup_tile_row(deck, data, decks, player, against):
+def create_matchup_tile_row(deck, data, decks, player, against, label_func=None):
     row = html.Div([
-        html.H5(deck_label.format_label(decks[deck])),
-        dbc.Row([create_matchup_tile_full(match, decks, player, against) for match in data], class_name='g-1')
+        html.H5(_call_label_func(label_func, decks[deck])),
+        dbc.Row([create_matchup_tile_full(match, decks, player, against, label_func=label_func) for match in data], class_name='g-1')
     ], className='mb-2')
     return row
 
-def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False):
+def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False, label_func=None):
     # Extract unique decks from player and sort them alphabetically
     player_unique_decks = list(set(matchup[player] for matchup in data))
     if len(player_unique_decks) == 0:
@@ -170,14 +185,13 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
         ordered_matchups = [None for _ in range(len(against_unique_decks))]
         for m in matchups:
             ordered_matchups[against_unique_decks.index(m[against])] = m
-        rows.append(create_matchup_table_row(deck, ordered_matchups, decks, player, against))
-        small_rows.append(create_matchup_tile_row(deck, ordered_matchups, decks, player, against))
-    
+        rows.append(create_matchup_table_row(deck, ordered_matchups, decks, player, against, label_func=label_func))
+        small_rows.append(create_matchup_tile_row(deck, ordered_matchups, decks, player, against, label_func=label_func))
+
     header_labels = [
-        html.Div(deck_label.format_label(
-            decks.get(deck, deck_label.create_default_deck(deck)),
-            hide_text=True
-        ), className='d-flex justify-content-center')
+        html.Div(
+            _call_label_func(label_func, decks.get(deck, deck_label.create_default_deck(deck)), hide_text=True),
+            className='d-flex justify-content-center')
         for deck in against_unique_decks
     ]
     headers = html.Thead(html.Tr([
