@@ -70,3 +70,21 @@ white_to_blue = linear_gradient(white, blue)
 red_to_white_to_blue = red_to_white + white_to_blue
 
 win_rate_color_bar = create_color_map(red_to_white_to_blue)
+
+
+def text_color_for_background(rgb):
+    rgb = rgb if not isinstance(rgb, str) and rgb.startswith('#') else hex_to_rgb(rgb)
+    r, g, b = rgb
+
+    def convert(color):
+        color /= 255.0
+        if color <= 0.03928:
+            return color / 12.92
+        return ((color + 0.055) / 1.055) ** 2.4
+
+    R = convert(r)
+    G = convert(g)
+    B = convert(b)
+
+    Y = 0.2126 * R + 0.7152 * G + 0.0722 * B
+    return 'black' if Y > 0.5 else 'white'
