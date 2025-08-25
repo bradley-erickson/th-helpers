@@ -71,6 +71,10 @@ red_to_white_to_blue = red_to_white + white_to_blue
 
 win_rate_color_bar = create_color_map(red_to_white_to_blue)
 
+green_gradient = transparent_gradient(green, 101)
+red_gradient = transparent_gradient(red, 101)
+blue_gradient = transparent_gradient(blue, 101)
+
 
 def text_color_for_background(rgb):
     rgb = rgb if not isinstance(rgb, str) and rgb.startswith('#') else hex_to_rgb(rgb)
