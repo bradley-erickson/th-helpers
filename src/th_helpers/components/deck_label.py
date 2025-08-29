@@ -33,6 +33,8 @@ def format_label(deck, hide_text=False, hide_text_small=False):
 
 
 def get_pokemon_icon(pokemon):
+    if pokemon.startswith('https'):
+        return pokemon
     if not pokemon:
         return ''
     if pokemon == 'substitute':

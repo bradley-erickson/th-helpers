@@ -7,14 +7,11 @@ from typing import Callable
 from th_helpers.components import deck_label
 from th_helpers.utils import colors
 
-win_rate_calc_comp = dcc.Markdown(
-    '''
-    $$
-    \% = \\frac{wins + \\frac{ties}{3}}{total}
-    $$
-    ''',
-    mathjax=True, className='win-rate-calc'
-)
+win_rate_calc_comp = '''
+$$
+\% = \\frac{wins + \\frac{ties}{3}}{total}
+$$
+'''
 SIGNIFICANT_MAPPING = {
     'some': '*',
     'all': '**',
@@ -47,15 +44,15 @@ def determine_win_rate(match):
 
 def create_record_string(match):
     if 'Win' in match and 'Loss' in match:
-        tied = f'-{match["Tie"]}' if 'Tie' in match else ''
+        tied = f'-{match["Tie"]}' if match.get('Tie', 0) > 0 in match else ''
         record_string = f'{match["Win"]}-{match["Loss"]}{tied}'
         return record_string
     if 'wins' in match and 'losses' in match:
-        tied = f'-{match["ties"]}' if 'ties' in match else ''
+        tied = f'-{match["ties"]}' if match.get('ties', 0) > 0 in match else ''
         record_string = f'{match["wins"]}-{match["losses"]}{tied}'
         return record_string
     if 'w' in match or 'l' in match or 't' in match:
-        tied = f'-{match["t"]}' if 't' in match else ''
+        tied = f'-{match["t"]}' if match.get('t', 0) > 0 else ''
         record_string = f'{match.get("w", 0)}-{match.get("l", 0)}{tied}'
         return record_string
     return None
@@ -209,21 +206,26 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
     return html.Div([table, small_view])
 
 
-example = html.Div([
-    html.Div([
-        'Other vs Other',
-        create_popover_inside('#fff', 'Wins-Losses-Ties', 'rate', decks={}, match={None: None}),
-        'Color based on rate',
-        html.Div(style={
-            'background': f'linear-gradient(to right, {", ".join(colors.red_to_white_to_blue)})',
-            'height': '20px',
-            'width': '100%',
-            'border': '1px solid #ccc'
-        }),
-        html.Div([html.Span(c) for c in [0, 100]], className='d-flex justify-content-between')
-    ], className='text-center'),
-    html.Div([
-        'Weighted success rate',
-        win_rate_calc_comp
-    ]),
-])
+def create_example(win_rate_mathjax):
+    example = html.Div([
+        html.Div([
+            'Other vs Other',
+            create_popover_inside('#fff', 'Wins-Losses-Ties', 'rate', decks={}, match={None: None}),
+            'Color based on rate',
+            html.Div(style={
+                'background': f'linear-gradient(to right, {", ".join(colors.red_to_white_to_blue)})',
+                'height': '20px',
+                'width': '100%',
+                'border': '1px solid #ccc'
+            }),
+            html.Div([html.Span(c) for c in [0, 100]], className='d-flex justify-content-between')
+        ], className='text-center'),
+        html.Div([
+            'Weighted success rate',
+            dcc.Markdown(
+                win_rate_mathjax,
+                mathjax=True, className='win-rate-calc'
+            )
+        ]),
+    ])
+    return example
