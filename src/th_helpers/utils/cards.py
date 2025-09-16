@@ -83,10 +83,12 @@ def sort_pokemon(cards):
     while len(name_counter.keys()) > 0:
         max_value = max(name_counter.values())
         max_names = [k for k, v in name_counter.items() if v == max_value]
-        if max_value == 1:
+        if max_value <= 1:
+            remaining = set(name_counter.keys())
             sort.extend(sorted(
-                (c for c in cards if c['name'] in max_names),
-                key=lambda x: x.get('play_rate', 0), reverse=True
+                (c for c in cards if c['name'] in remaining),
+                key=lambda x: x.get('play_rate', 0),
+                reverse=True,
             ))
             break
         min_dex = min(v for k, v in name_dex.items() if k in max_names)
@@ -143,7 +145,6 @@ def sort_deck(cards):
         if supertype not in types:
             supertype = energy
         types[supertype].append(c)
-
     sorted_cards = []
     for t in types.keys():
         sorted_cards.extend(

@@ -26,6 +26,7 @@ def fetch_events():
 
 
 def fetch_decklists(tour_id):
+    # TODO add in Juniors and Seniors here
     base_url = 'https://limitlesstcg.com'
     tour_url = f'{base_url}/tournaments/{tour_id}'
 
@@ -62,6 +63,14 @@ def prompt_to_get_limitless_tour_id():
     selected_id = input('Select tournament: ')
     print('')
     return ids[int(selected_id)]
+
+
+def fetch_decks():
+    url = 'https://limitlesstcg.com/decks?variants=true'
+    html = utils.get_html(url)
+    rows = utils.extract_table_rows(html, 'data-table')
+    # TODO extract decks
+    return
 
 
 if __name__ == '__main__':

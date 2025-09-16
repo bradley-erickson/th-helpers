@@ -1,8 +1,8 @@
 class TIME:
     MINUTE = 60
-    HOUR = 3600
-    HALF_DAY = 43200
-    DAY = 86400
+    HOUR = MINUTE * 60
+    HALF_DAY = HOUR * 12
+    DAY = HOUR * 24
 
 
 class DASH:
