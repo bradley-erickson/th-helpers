@@ -28,6 +28,8 @@ def _query_card(id):
 def get_card(name, set, number):
     card = {'name': name, 'set': set, 'number': number}
     set_obj = th_helpers.utils.card_cache.get_set_by_ptcgo(set)
+    if set_obj is None:
+        return card
     card_set = set_obj['id']
     card_number = card['number']
 
