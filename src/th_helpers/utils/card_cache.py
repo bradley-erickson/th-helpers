@@ -14,7 +14,7 @@ import requests
 
 # ---------------- Config ----------------
 CACHE_DIR = os.environ.get("POKEMON_CACHE_DIR", os.path.join(os.getcwd(), "data"))
-EXTRACT_DIR = os.path.join(CACHE_DIR, "pokemon-tcg-data")   # extracted release
+EXTRACT_DIR = os.path.join(CACHE_DIR, "pokemon-tcg-data")   # extracted archieve
 
 # Cards index (existing behavior)
 INDEX_PATH = os.path.join(CACHE_DIR, "cards_by_id.json")    # flat {card_id: card_json}
@@ -24,6 +24,7 @@ SETS_INDEX_PATH = os.path.join(CACHE_DIR, "sets_by_ptcgo.json")  # flat {PTCGO_C
 GH_OWNER = os.environ.get("POKEMON_GH_OWNER", "PokemonTCG")
 GH_REPO = os.environ.get("POKEMON_GH_REPO", "pokemon-tcg-data")
 GH_TOKEN = os.environ.get("GITHUB_TOKEN")  # optional for higher rate limits
+GH_BRANCH = os.environ.get("POKEMON_GH_BRANCH", "master")
 
 RELEASE_TAG = os.environ.get("POKEMON_RELEASE_TAG")        # e.g. "v2.15"
 FORCE_REFRESH = os.environ.get("POKEMON_FORCE_REFRESH", "0") == "1"
@@ -42,13 +43,6 @@ def _gh_headers() -> Dict[str, str]:
     if GH_TOKEN:
         h["Authorization"] = f"Bearer {GH_TOKEN}"
     return h
-
-
-def _latest_release_json() -> Dict[str, Any]:
-    url = f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/releases/latest"
-    r = requests.get(url, headers=_gh_headers(), timeout=30)
-    r.raise_for_status()
-    return r.json()
 
 
 def _tag_release_json(tag: str) -> Dict[str, Any]:
@@ -235,7 +229,8 @@ def ensure_loaded(force_refresh: bool = FORCE_REFRESH) -> None:
     Ensure in-memory flat indexes:
       - Cards: {card_id: card_json}
       - Sets:  {PTCGO_CODE: set_json}
-    If missing (or forced), fetch the (tagged or latest) GitHub release zip and rebuild both.
+    If missing (or forced), fetch the GitHub archive (tagged release when specified, otherwise
+    the configured branch) and rebuild both.
     """
     global _loaded
     with _lock:
@@ -249,13 +244,21 @@ def ensure_loaded(force_refresh: bool = FORCE_REFRESH) -> None:
                 _loaded = True
                 return
 
-        # (Re)build from a fresh release
-        rel = _tag_release_json(RELEASE_TAG) if RELEASE_TAG else _latest_release_json()
-        zip_url = _pick_zip_asset(rel)
-        r = requests.get(zip_url, headers=_gh_headers(), timeout=120)
-        r.raise_for_status()
+        # (Re)build from a fresh archive
+        if RELEASE_TAG:
+            rel = _tag_release_json(RELEASE_TAG)
+            zip_url = _pick_zip_asset(rel)
+            r = requests.get(zip_url, headers=_gh_headers(), timeout=120)
+            r.raise_for_status()
+            zip_bytes = r.content
+        else:
+            branch = GH_BRANCH or "master"
+            url = f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/zipball/{branch}"
+            r = requests.get(url, headers=_gh_headers(), timeout=120)
+            r.raise_for_status()
+            zip_bytes = r.content
 
-        _extract_zip_to_dir(r.content, EXTRACT_DIR)
+        _extract_zip_to_dir(zip_bytes, EXTRACT_DIR)
         flat_cards = _index_cards_from_extracted(EXTRACT_DIR)
         flat_sets = _index_sets_from_extracted(EXTRACT_DIR)
 
@@ -272,7 +275,7 @@ def ensure_loaded(force_refresh: bool = FORCE_REFRESH) -> None:
 
 def update_from_release(tag: Optional[str] = None) -> int:
     """
-    Force-refresh from a specific tag (e.g., 'v2.15') or latest if None.
+    Force-refresh from a specific tag (e.g., 'v2.15') or the configured branch if None.
     Returns the number of cards indexed (for backward compatibility).
     Note: sets are also refreshed as part of this call.
     """
@@ -339,7 +342,11 @@ if __name__ == "__main__":
     import argparse
 
     ap = argparse.ArgumentParser(description="Fetch & index Pokémon TCG data (flat by card_id and PTCGO sets).")
-    ap.add_argument("--tag", default=None, help="Release tag to fetch (e.g., v2.15). Defaults to latest.")
+    ap.add_argument(
+        "--tag",
+        default=None,
+        help="Release tag to fetch (e.g., v2.15). Defaults to the configured branch when omitted.",
+    )
     ap.add_argument("--force", action="store_true", help="Force refresh even if cached index exists.")
     ap.add_argument("--ids", nargs="*", default=[], help="Card IDs to print after loading.")
     ap.add_argument("--set-codes", nargs="*", default=[], help="PTCGO set codes to print after loading.")
