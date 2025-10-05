@@ -39,6 +39,7 @@ class DASH:
     ORDER = 'order'
     PAGES_LOCATION = '_pages_location'
     PATHNAME = 'pathname'
+    SEARCH='search'
     SIZE = 'size'
     SRC = 'src'
     START_DATE = 'start_date'

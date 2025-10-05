@@ -143,7 +143,7 @@ def sort_deck(cards):
         energy: sort_energy
     }
     for c in cards:
-        supertype = c['supertype']
+        supertype = c.get('supertype')
         if supertype not in types:
             supertype = energy
         types[supertype].append(c)
