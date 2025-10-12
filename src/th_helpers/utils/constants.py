@@ -22,6 +22,7 @@ class DASH:
     DATA = 'data'
     DISABLED = 'disabled'
     END_DATE = 'end_date'
+    HASH = 'hash'
     HEADER = 'header'
     HREF = 'href'
     ICON = 'icon'
@@ -47,6 +48,11 @@ class DASH:
     SUBTYPE = 'subtype'
     TYPE = 'type'
     VALUE = 'value'
+
+    class AIO:
+        AIO_ID = 'aio_id'
+        COMPONENT = 'component'
+        SUBCOMPONENT = 'subcomponent'
 
 
 class BOOTSTRAP:

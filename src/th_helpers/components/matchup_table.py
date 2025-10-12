@@ -44,11 +44,11 @@ def determine_win_rate(match):
 
 def create_record_string(match):
     if 'Win' in match and 'Loss' in match:
-        tied = f'-{match["Tie"]}' if match.get('Tie', 0) > 0 in match else ''
+        tied = f'-{match["Tie"]}' if match.get('Tie', 0) > 0 else ''
         record_string = f'{match["Win"]}-{match["Loss"]}{tied}'
         return record_string
     if 'wins' in match and 'losses' in match:
-        tied = f'-{match["ties"]}' if match.get('ties', 0) > 0 in match else ''
+        tied = f'-{match["ties"]}' if match.get('ties', 0) > 0 else ''
         record_string = f'{match["wins"]}-{match["losses"]}{tied}'
         return record_string
     if 'w' in match or 'l' in match or 't' in match:
@@ -153,7 +153,7 @@ def create_matchup_tile_row(deck, data, decks, player, against, label_func=None)
     ], className='mb-2')
     return row
 
-def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False, label_func=None):
+def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False, label_func=None, sort_matchups=False):
     # Extract unique decks from player and sort them alphabetically
     player_unique_decks = list(set(matchup[player] for matchup in data))
     if len(player_unique_decks) == 0:
@@ -166,6 +166,16 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
 
     rows = []
     small_rows = []
+    deck_matchups_lookup = {}
+
+    def _matchup_sort_key(match):
+        if match is None:
+            return math.inf
+        wr = match.get('win_rate')
+        if wr is None or math.isnan(wr):
+            return math.inf
+        return wr
+
     # Organize the data
     for deck in player_unique_decks:
         if deck not in decks:
@@ -182,8 +192,46 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
         ordered_matchups = [None for _ in range(len(against_unique_decks))]
         for m in matchups:
             ordered_matchups[against_unique_decks.index(m[against])] = m
-        rows.append(create_matchup_table_row(deck, ordered_matchups, decks, player, against, label_func=label_func))
-        small_rows.append(create_matchup_tile_row(deck, ordered_matchups, decks, player, against, label_func=label_func))
+        deck_matchups_lookup[deck] = ordered_matchups
+
+        sorted_matchups = sorted(
+            (m for m in ordered_matchups if m is not None),
+            key=_matchup_sort_key
+        )
+        small_rows.append(
+            create_matchup_tile_row(
+                deck,
+                sorted_matchups if sort_matchups else ordered_matchups,
+                decks,
+                player,
+                against,
+                label_func=label_func
+            )
+        )
+
+    if len(player_unique_decks) == 1 and player_unique_decks[0] in deck_matchups_lookup:
+        deck = player_unique_decks[0]
+        ordered_matchups = deck_matchups_lookup[deck]
+
+        sorted_indexes = sorted(
+            range(len(against_unique_decks)),
+            key=lambda index: _matchup_sort_key(ordered_matchups[index])
+        )
+        against_unique_decks = [against_unique_decks[i] for i in sorted_indexes]
+        deck_matchups_lookup[deck] = [ordered_matchups[i] for i in sorted_indexes]
+
+    for deck in player_unique_decks:
+        if deck in deck_matchups_lookup:
+            rows.append(
+                create_matchup_table_row(
+                    deck,
+                    deck_matchups_lookup[deck],
+                    decks,
+                    player,
+                    against,
+                    label_func=label_func
+                )
+            )
 
     header_labels = [
         html.Div(
@@ -192,7 +240,7 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
         for deck in against_unique_decks
     ]
     headers = html.Thead(html.Tr([
-        html.Th(deck) for deck in [win_rate_calc_comp] + header_labels
+        html.Th(deck) for deck in [dcc.Markdown(win_rate_calc_comp, mathjax=True)] + header_labels
     ]), className='sticky-top')
     table = dbc.Table([
         headers,

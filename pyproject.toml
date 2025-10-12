@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "th-helpers"
-version = "0.1.17"
+version = "0.1.18"
 description = "Helper functions for Trainer Hill"
 authors = [
     { name="Bradley Erickson", email="bbwe24@gmail.com" }
