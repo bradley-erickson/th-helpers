@@ -84,3 +84,17 @@ class STYLE:
     MAXHEIGHT = 'maxHeight'
     MAXWIDTH = 'maxWidth'
     WIDTH = 'width'
+
+
+class RESULT_RATE_STRATEGY:
+    IGNORE_TIES = 'ignore_ties'
+    TIES_COUNT_AS_LOSSES = 'ties_count_as_losses'
+    TIES_COUNT_AS_HALF_WIN = 'ties_count_as_half_win'
+    TIES_COUNT_AS_THIRD_WIN = 'ties_count_as_third_win'
+    TIES_COUNT_AS_WINS = 'ties_count_as_wins'
+
+
+class RESULT_RATE_FIELD:
+    LABEL = 'label'
+    FORMULA = 'formula'
+    CALCULATE = 'calculate'

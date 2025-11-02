@@ -153,7 +153,7 @@ def create_matchup_tile_row(deck, data, decks, player, against, label_func=None)
     ], className='mb-2')
     return row
 
-def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False, label_func=None, sort_matchups=False):
+def create_matchup_spread(data, decks, player='deck1', against='deck2', small_view=False, label_func=None, sort_matchups=False, result_rate_component=None):
     # Extract unique decks from player and sort them alphabetically
     player_unique_decks = list(set(matchup[player] for matchup in data))
     if len(player_unique_decks) == 0:
@@ -240,7 +240,7 @@ def create_matchup_spread(data, decks, player='deck1', against='deck2', small_vi
         for deck in against_unique_decks
     ]
     headers = html.Thead(html.Tr([
-        html.Th(deck) for deck in [dcc.Markdown(win_rate_calc_comp, mathjax=True)] + header_labels
+        html.Th(deck) for deck in [result_rate_component] + header_labels
     ]), className='sticky-top')
     table = dbc.Table([
         headers,
@@ -268,12 +268,5 @@ def create_example(win_rate_mathjax):
             }),
             html.Div([html.Span(c) for c in [0, 100]], className='d-flex justify-content-between')
         ], className='text-center'),
-        html.Div([
-            'Weighted success rate',
-            dcc.Markdown(
-                win_rate_mathjax,
-                mathjax=True, className='win-rate-calc'
-            )
-        ]),
     ])
     return example
