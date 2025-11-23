@@ -1,0 +1,1096 @@
+[
+  {
+    "id": "0046_SR",
+    "name": "International Championship São Paulo (SR)",
+    "date": "2025-11-21",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 178
+  },
+  {
+    "id": "0046_MA",
+    "name": "International Championship São Paulo (MA)",
+    "date": "2025-11-21",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2117
+  },
+  {
+    "id": "0046_JR",
+    "name": "International Championship São Paulo (JR)",
+    "date": "2025-11-21",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 161
+  },
+  {
+    "id": "0045_SR",
+    "name": "Special Event Buenos Aires (SR)",
+    "date": "2025-11-15",
+    "game": "PTCG",
+    "division": "SR"
+  },
+  {
+    "id": "0045_MA",
+    "name": "Special Event Buenos Aires (MA)",
+    "date": "2025-11-15",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 350
+  },
+  {
+    "id": "0045_JR",
+    "name": "Special Event Buenos Aires (JR)",
+    "date": "2025-11-15",
+    "game": "PTCG",
+    "division": "JR"
+  },
+  {
+    "id": "0044_SR",
+    "name": "Regional Championship Las Vegas (SR)",
+    "date": "2025-11-14",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 332
+  },
+  {
+    "id": "0044_MA",
+    "name": "Regional Championship Las Vegas (MA)",
+    "date": "2025-11-14",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2919
+  },
+  {
+    "id": "0044_JR",
+    "name": "Regional Championship Las Vegas (JR)",
+    "date": "2025-11-14",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 226
+  },
+  {
+    "id": "0043_SR",
+    "name": "Regional Championship Gdańsk (SR)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 220
+  },
+  {
+    "id": "0042_SR",
+    "name": "Regional Championship Brisbane (SR)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 81
+  },
+  {
+    "id": "0043_MA",
+    "name": "Regional Championship Gdańsk (MA)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1675
+  },
+  {
+    "id": "0042_MA",
+    "name": "Regional Championship Brisbane (MA)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 617
+  },
+  {
+    "id": "0043_JR",
+    "name": "Regional Championship Gdańsk (JR)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 121
+  },
+  {
+    "id": "0042_JR",
+    "name": "Regional Championship Brisbane (JR)",
+    "date": "2025-11-01",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 41
+  },
+  {
+    "id": "0041_SR",
+    "name": "Regional Championship Lille (SR)",
+    "date": "2025-10-25",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 213
+  },
+  {
+    "id": "0041_MA",
+    "name": "Regional Championship Lille (MA)",
+    "date": "2025-10-25",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2028
+  },
+  {
+    "id": "0041_JR",
+    "name": "Regional Championship Lille (JR)",
+    "date": "2025-10-25",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 178
+  },
+  {
+    "id": "0039_SR",
+    "name": "Regional Championship Belo Horizonte (SR)",
+    "date": "2025-10-11",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 84
+  },
+  {
+    "id": "0039_MA",
+    "name": "Regional Championship Belo Horizonte (MA)",
+    "date": "2025-10-11",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1117
+  },
+  {
+    "id": "0039_JR",
+    "name": "Regional Championship Belo Horizonte (JR)",
+    "date": "2025-10-11",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 59
+  },
+  {
+    "id": "0040_SR",
+    "name": "Regional Championship Milwaukee (SR)",
+    "date": "2025-10-10",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 270
+  },
+  {
+    "id": "0040_MA",
+    "name": "Regional Championship Milwaukee (MA)",
+    "date": "2025-10-10",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2305
+  },
+  {
+    "id": "0040_JR",
+    "name": "Regional Championship Milwaukee (JR)",
+    "date": "2025-10-10",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 187
+  },
+  {
+    "id": "0038_SR",
+    "name": "Regional Championship Pittsburgh (SR)",
+    "date": "2025-09-19",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 335
+  },
+  {
+    "id": "0038_MA",
+    "name": "Regional Championship Pittsburgh (MA)",
+    "date": "2025-09-19",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2691
+  },
+  {
+    "id": "0038_JR",
+    "name": "Regional Championship Pittsburgh (JR)",
+    "date": "2025-09-19",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 214
+  },
+  {
+    "id": "0037_SR",
+    "name": "Regional Championship Monterrey (SR)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 98
+  },
+  {
+    "id": "0036_SR",
+    "name": "Regional Championship Frankfurt (SR)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 243
+  },
+  {
+    "id": "0037_MA",
+    "name": "Regional Championship Monterrey (MA)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1620
+  },
+  {
+    "id": "0036_MA",
+    "name": "Regional Championship Frankfurt (MA)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2433
+  },
+  {
+    "id": "0037_JR",
+    "name": "Regional Championship Monterrey (JR)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 64
+  },
+  {
+    "id": "0036_JR",
+    "name": "Regional Championship Frankfurt (JR)",
+    "date": "2025-09-13",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 158
+  },
+  {
+    "id": "0035_SR",
+    "name": "World Championship Anaheim (SR)",
+    "date": "2025-08-15",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 353
+  },
+  {
+    "id": "0035_MA",
+    "name": "World Championship Anaheim (MA)",
+    "date": "2025-08-15",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 721
+  },
+  {
+    "id": "0035_JR",
+    "name": "World Championship Anaheim (JR)",
+    "date": "2025-08-15",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 351
+  },
+  {
+    "id": "0034_SR",
+    "name": "International Championship New Orleans (SR)",
+    "date": "2025-06-13",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 419
+  },
+  {
+    "id": "0034_MA",
+    "name": "International Championship New Orleans (MA)",
+    "date": "2025-06-13",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 3812
+  },
+  {
+    "id": "0034_JR",
+    "name": "International Championship New Orleans (JR)",
+    "date": "2025-06-13",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 330
+  },
+  {
+    "id": "0033_SR",
+    "name": "Special Event Bologna (SR)",
+    "date": "2025-05-31",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 123
+  },
+  {
+    "id": "0033_MA",
+    "name": "Special Event Bologna (MA)",
+    "date": "2025-05-31",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1239
+  },
+  {
+    "id": "0033_JR",
+    "name": "Special Event Bologna (JR)",
+    "date": "2025-05-31",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 129
+  },
+  {
+    "id": "0032_SR",
+    "name": "Regional Championship Portland (SR)",
+    "date": "2025-05-23",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 215
+  },
+  {
+    "id": "0032_MA",
+    "name": "Regional Championship Portland (MA)",
+    "date": "2025-05-23",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1688
+  },
+  {
+    "id": "0032_JR",
+    "name": "Regional Championship Portland (JR)",
+    "date": "2025-05-23",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 164
+  },
+  {
+    "id": "0031_SR",
+    "name": "Regional Championship Santiago (SR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 41
+  },
+  {
+    "id": "0030_SR",
+    "name": "Special Event Utrecht (SR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 149
+  },
+  {
+    "id": "0029_SR",
+    "name": "Regional Championship Melbourne (SR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 68
+  },
+  {
+    "id": "0031_MA",
+    "name": "Regional Championship Santiago (MA)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1249
+  },
+  {
+    "id": "0030_MA",
+    "name": "Special Event Utrecht (MA)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1241
+  },
+  {
+    "id": "0029_MA",
+    "name": "Regional Championship Melbourne (MA)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 563
+  },
+  {
+    "id": "0031_JR",
+    "name": "Regional Championship Santiago (JR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 34
+  },
+  {
+    "id": "0030_JR",
+    "name": "Special Event Utrecht (JR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 115
+  },
+  {
+    "id": "0029_JR",
+    "name": "Regional Championship Melbourne (JR)",
+    "date": "2025-05-17",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 73
+  },
+  {
+    "id": "0028_SR",
+    "name": "Regional Championship Milwaukee (SR)",
+    "date": "2025-05-02",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 247
+  },
+  {
+    "id": "0028_MA",
+    "name": "Regional Championship Milwaukee (MA)",
+    "date": "2025-05-02",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1657
+  },
+  {
+    "id": "0028_JR",
+    "name": "Regional Championship Milwaukee (JR)",
+    "date": "2025-05-02",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 181
+  },
+  {
+    "id": "0027_SR",
+    "name": "Special Event Seville (SR)",
+    "date": "2025-04-26",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 75
+  },
+  {
+    "id": "0027_MA",
+    "name": "Special Event Seville (MA)",
+    "date": "2025-04-26",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 817
+  },
+  {
+    "id": "0027_JR",
+    "name": "Special Event Seville (JR)",
+    "date": "2025-04-26",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 52
+  },
+  {
+    "id": "0026_SR",
+    "name": "Regional Championship Monterrey (SR)",
+    "date": "2025-04-19",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 72
+  },
+  {
+    "id": "0026_MA",
+    "name": "Regional Championship Monterrey (MA)",
+    "date": "2025-04-19",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1327
+  },
+  {
+    "id": "0026_JR",
+    "name": "Regional Championship Monterrey (JR)",
+    "date": "2025-04-19",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 51
+  },
+  {
+    "id": "0025_SR",
+    "name": "Regional Championship Atlanta (SR)",
+    "date": "2025-04-11",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 334
+  },
+  {
+    "id": "0025_MA",
+    "name": "Regional Championship Atlanta (MA)",
+    "date": "2025-04-11",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2684
+  },
+  {
+    "id": "0025_JR",
+    "name": "Regional Championship Atlanta (JR)",
+    "date": "2025-04-11",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 226
+  },
+  {
+    "id": "0024_SR",
+    "name": "Regional Championship Brisbane (SR)",
+    "date": "2025-03-29",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 77
+  },
+  {
+    "id": "0024_MA",
+    "name": "Regional Championship Brisbane (MA)",
+    "date": "2025-03-29",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 470
+  },
+  {
+    "id": "0024_JR",
+    "name": "Regional Championship Brisbane (JR)",
+    "date": "2025-03-29",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 55
+  },
+  {
+    "id": "0023_SR",
+    "name": "Regional Championship Stockholm (SR)",
+    "date": "2025-03-22",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 140
+  },
+  {
+    "id": "0023_MA",
+    "name": "Regional Championship Stockholm (MA)",
+    "date": "2025-03-22",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 815
+  },
+  {
+    "id": "0023_JR",
+    "name": "Regional Championship Stockholm (JR)",
+    "date": "2025-03-22",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 104
+  },
+  {
+    "id": "0022_SR",
+    "name": "Regional Championship Fortaleza (SR)",
+    "date": "2025-03-08",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 54
+  },
+  {
+    "id": "0022_MA",
+    "name": "Regional Championship Fortaleza (MA)",
+    "date": "2025-03-08",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 715
+  },
+  {
+    "id": "0022_JR",
+    "name": "Regional Championship Fortaleza (JR)",
+    "date": "2025-03-08",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 42
+  },
+  {
+    "id": "0021_SR",
+    "name": "Regional Championship Vancouver (SR)",
+    "date": "2025-03-07",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 185
+  },
+  {
+    "id": "0021_MA",
+    "name": "Regional Championship Vancouver (MA)",
+    "date": "2025-03-07",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1314
+  },
+  {
+    "id": "0021_JR",
+    "name": "Regional Championship Vancouver (JR)",
+    "date": "2025-03-07",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 120
+  },
+  {
+    "id": "0020_SR",
+    "name": "International Championship London (SR)",
+    "date": "2025-02-21",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 327
+  },
+  {
+    "id": "0020_MA",
+    "name": "International Championship London (MA)",
+    "date": "2025-02-21",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 3361
+  },
+  {
+    "id": "0020_JR",
+    "name": "International Championship London (JR)",
+    "date": "2025-02-21",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 280
+  },
+  {
+    "id": "0019_SR",
+    "name": "Special Event San Juan (SR)",
+    "date": "2025-02-15",
+    "game": "PTCG",
+    "division": "SR"
+  },
+  {
+    "id": "0019_MA",
+    "name": "Special Event San Juan (MA)",
+    "date": "2025-02-15",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 299
+  },
+  {
+    "id": "0019_JR",
+    "name": "Special Event San Juan (JR)",
+    "date": "2025-02-15",
+    "game": "PTCG",
+    "division": "JR"
+  },
+  {
+    "id": "0018_SR",
+    "name": "Regional Championship Mérida (SR)",
+    "date": "2025-02-08",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 55
+  },
+  {
+    "id": "0018_MA",
+    "name": "Regional Championship Mérida (MA)",
+    "date": "2025-02-08",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1151
+  },
+  {
+    "id": "0018_JR",
+    "name": "Regional Championship Mérida (JR)",
+    "date": "2025-02-08",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 42
+  },
+  {
+    "id": "0017_SR",
+    "name": "Regional Championship San Antonio (SR)",
+    "date": "2025-01-24",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 258
+  },
+  {
+    "id": "0017_MA",
+    "name": "Regional Championship San Antonio (MA)",
+    "date": "2025-01-24",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2400
+  },
+  {
+    "id": "0017_JR",
+    "name": "Regional Championship San Antonio (JR)",
+    "date": "2025-01-24",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 194
+  },
+  {
+    "id": "0016_SR",
+    "name": "Regional Championship Rio de Janeiro (SR)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 78
+  },
+  {
+    "id": "0015_SR",
+    "name": "Regional Championship Birmingham (SR)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 230
+  },
+  {
+    "id": "0016_MA",
+    "name": "Regional Championship Rio de Janeiro (MA)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1139
+  },
+  {
+    "id": "0015_MA",
+    "name": "Regional Championship Birmingham (MA)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2018
+  },
+  {
+    "id": "0016_JR",
+    "name": "Regional Championship Rio de Janeiro (JR)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 71
+  },
+  {
+    "id": "0015_JR",
+    "name": "Regional Championship Birmingham (JR)",
+    "date": "2025-01-18",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 160
+  },
+  {
+    "id": "0014_SR",
+    "name": "Regional Championship Toronto (SR)",
+    "date": "2024-12-13",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 237
+  },
+  {
+    "id": "0014_MA",
+    "name": "Regional Championship Toronto (MA)",
+    "date": "2024-12-13",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2137
+  },
+  {
+    "id": "0014_JR",
+    "name": "Regional Championship Toronto (JR)",
+    "date": "2024-12-13",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 156
+  },
+  {
+    "id": "0012_SR",
+    "name": "Special Event Bogotá (SR)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "SR"
+  },
+  {
+    "id": "0013_SR",
+    "name": "Regional Championship Perth (SR)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 62
+  },
+  {
+    "id": "0012_MA",
+    "name": "Special Event Bogotá (MA)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 215
+  },
+  {
+    "id": "0013_MA",
+    "name": "Regional Championship Perth (MA)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 318
+  },
+  {
+    "id": "0012_JR",
+    "name": "Special Event Bogotá (JR)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "JR"
+  },
+  {
+    "id": "0013_JR",
+    "name": "Regional Championship Perth (JR)",
+    "date": "2024-12-07",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 42
+  },
+  {
+    "id": "0011_SR",
+    "name": "Regional Championship Stuttgart (SR)",
+    "date": "2024-11-30",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 177
+  },
+  {
+    "id": "0011_MA",
+    "name": "Regional Championship Stuttgart (MA)",
+    "date": "2024-11-30",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1702
+  },
+  {
+    "id": "0011_JR",
+    "name": "Regional Championship Stuttgart (JR)",
+    "date": "2024-11-30",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 154
+  },
+  {
+    "id": "0010_SR",
+    "name": "Regional Championship Sacramento (SR)",
+    "date": "2024-11-22",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 229
+  },
+  {
+    "id": "0010_MA",
+    "name": "Regional Championship Sacramento (MA)",
+    "date": "2024-11-22",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1705
+  },
+  {
+    "id": "0010_JR",
+    "name": "Regional Championship Sacramento (JR)",
+    "date": "2024-11-22",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 146
+  },
+  {
+    "id": "0009_SR",
+    "name": "International Championship São Paulo (SR)",
+    "date": "2024-11-15",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 179
+  },
+  {
+    "id": "0009_MA",
+    "name": "International Championship São Paulo (MA)",
+    "date": "2024-11-15",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1810
+  },
+  {
+    "id": "0009_JR",
+    "name": "International Championship São Paulo (JR)",
+    "date": "2024-11-15",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 120
+  },
+  {
+    "id": "0008_SR",
+    "name": "Special Event Buenos Aires (SR)",
+    "date": "2024-11-09",
+    "game": "PTCG",
+    "division": "SR"
+  },
+  {
+    "id": "0008_MA",
+    "name": "Special Event Buenos Aires (MA)",
+    "date": "2024-11-09",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 275
+  },
+  {
+    "id": "0008_JR",
+    "name": "Special Event Buenos Aires (JR)",
+    "date": "2024-11-09",
+    "game": "PTCG",
+    "division": "JR"
+  },
+  {
+    "id": "0007_SR",
+    "name": "Regional Championship Gdańsk (SR)",
+    "date": "2024-11-02",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 160
+  },
+  {
+    "id": "0007_MA",
+    "name": "Regional Championship Gdańsk (MA)",
+    "date": "2024-11-02",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1372
+  },
+  {
+    "id": "0007_JR",
+    "name": "Regional Championship Gdańsk (JR)",
+    "date": "2024-11-02",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 109
+  },
+  {
+    "id": "0006_SR",
+    "name": "Regional Championship Lille (SR)",
+    "date": "2024-10-19",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 145
+  },
+  {
+    "id": "0006_MA",
+    "name": "Regional Championship Lille (MA)",
+    "date": "2024-10-19",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1311
+  },
+  {
+    "id": "0006_JR",
+    "name": "Regional Championship Lille (JR)",
+    "date": "2024-10-19",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 135
+  },
+  {
+    "id": "0005_SR",
+    "name": "Regional Championship Louisville (SR)",
+    "date": "2024-10-11",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 268
+  },
+  {
+    "id": "0005_MA",
+    "name": "Regional Championship Louisville (MA)",
+    "date": "2024-10-11",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1938
+  },
+  {
+    "id": "0005_JR",
+    "name": "Regional Championship Louisville (JR)",
+    "date": "2024-10-11",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 161
+  },
+  {
+    "id": "0004_SR",
+    "name": "Special Event Lima (SR)",
+    "date": "2024-10-05",
+    "game": "PTCG",
+    "division": "SR"
+  },
+  {
+    "id": "0004_MA",
+    "name": "Special Event Lima (MA)",
+    "date": "2024-10-05",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 304
+  },
+  {
+    "id": "0004_JR",
+    "name": "Special Event Lima (JR)",
+    "date": "2024-10-05",
+    "game": "PTCG",
+    "division": "JR"
+  },
+  {
+    "id": "0003_SR",
+    "name": "Regional Championship Joinville (SR)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 34
+  },
+  {
+    "id": "0002_SR",
+    "name": "Regional Championship Dortmund (SR)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 165
+  },
+  {
+    "id": "0003_MA",
+    "name": "Regional Championship Joinville (MA)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 578
+  },
+  {
+    "id": "0002_MA",
+    "name": "Regional Championship Dortmund (MA)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 1815
+  },
+  {
+    "id": "0003_JR",
+    "name": "Regional Championship Joinville (JR)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 34
+  },
+  {
+    "id": "0002_JR",
+    "name": "Regional Championship Dortmund (JR)",
+    "date": "2024-09-28",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 132
+  },
+  {
+    "id": "0001_SR",
+    "name": "Regional Championship Baltimore (SR)",
+    "date": "2024-09-13",
+    "game": "PTCG",
+    "division": "SR",
+    "player_count": 269
+  },
+  {
+    "id": "0001_MA",
+    "name": "Regional Championship Baltimore (MA)",
+    "date": "2024-09-13",
+    "game": "PTCG",
+    "division": "MA",
+    "player_count": 2307
+  },
+  {
+    "id": "0001_JR",
+    "name": "Regional Championship Baltimore (JR)",
+    "date": "2024-09-13",
+    "game": "PTCG",
+    "division": "JR",
+    "player_count": 190
+  }
+]
