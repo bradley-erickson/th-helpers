@@ -5,6 +5,11 @@ class TIME:
     DAY = HOUR * 24
 
 
+class GAMES:
+    PTCG = 'PTCG'
+    POCKET = 'POCKET'
+
+
 class DASH:
     '''Constants used for referencing different component
     attributes - primarly for callbacks.
