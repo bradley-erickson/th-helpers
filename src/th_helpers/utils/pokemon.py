@@ -439,6 +439,7 @@ pokemon = [
     'greedent',
     'greninja-ash',
     'greninja',
+    'greninja-mega',
     'grimer-alola',
     'grimer',
     'grimmsnarl-gmax',
